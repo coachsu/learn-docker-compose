@@ -1,0 +1,15 @@
+name: compose_by_pull
+services:
+  # 容器服務(Python執行環境)
+  python-runtime:
+    # 指定下載映像檔
+    image: python:3.13-slim
+    # 指定容器名稱
+    container_name: python-runtime
+    # 對應儲存空間
+    volumes:
+      - ./:/app
+    # 指定容器工作目錄
+    working_dir: /app
+    # 指定容器啟動時執行的命令
+    command: python app.py

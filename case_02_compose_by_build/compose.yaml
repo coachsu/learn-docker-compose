@@ -1,0 +1,13 @@
+name: compose_by_build
+services:
+  # 容器應用程式(網頁服務)  
+  python-web:
+    # 從 Dockerfile 產生映像檔並指定路徑
+    build: .
+    # 指定容器名稱
+    container_name: web-echo
+    # 對應通訊埠
+    ports:
+      - 5000:5000
+  
+  
