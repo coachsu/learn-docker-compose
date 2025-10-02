@@ -1,0 +1,14 @@
+name: compose_two_services
+
+services:
+  web:
+    build: ./web
+    ports:
+      - 8080:80
+    depends_on:
+      - app
+
+  app:
+    build: ./app
+    expose:
+      - 5000

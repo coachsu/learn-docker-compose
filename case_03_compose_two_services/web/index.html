@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <title>Echo API 前端</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f4f9;
+    }
+    h1 {
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, textarea, button {
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+    }
+    pre {
+      background: #eee;
+      padding: 15px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Echo API 前端</h1>
+
+    <h3>GET 測試</h3>
+    <input type="text" id="getMessage" placeholder="輸入訊息 (msg)">
+    <button onclick="sendGet()">送出 GET</button>
+
+    <h3>回應</h3>
+    <pre id="responseBox">等待回應...</pre>
+  </div>
+
+  <script>
+    const apiUrl = "/api/echo"; // 如果部署在遠端，請改成對應網址
+
+    async function sendGet() {
+      const msg = document.getElementById("getMessage").value || "Hello";
+      const res = await fetch(`${apiUrl}?msg=${encodeURIComponent(msg)}`);
+      const data = await res.json();
+      document.getElementById("responseBox").innerText = JSON.stringify(data, null, 2);
+    }
+
+  </script>
+</body>
+</html>

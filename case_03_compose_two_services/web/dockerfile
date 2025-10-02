@@ -1,0 +1,18 @@
+# 使用官方 Nginx 映像檔
+FROM nginx:alpine
+
+# 刪除預設的靜態檔案
+RUN rm -rf /usr/share/nginx/html/*
+
+# 複製前端檔案到 Nginx 預設目錄
+COPY index.html /usr/share/nginx/html/
+
+# (可選) 如果有 CSS / JS / 圖片資料夾，也一併複製
+# COPY static/ /usr/share/nginx/html/static/
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# 開放 80 port
+EXPOSE 80
+
+# 使用 Nginx 預設啟動命令
+CMD ["nginx", "-g", "daemon off;"]
