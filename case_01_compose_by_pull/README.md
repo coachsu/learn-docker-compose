@@ -30,4 +30,4 @@ docker compose down
 2. 映像檔是否已刪除?
 
 ## 延伸問題 
-1. 如何在停止並刪除 docker compose 服務時同時刪除映像檔?
+1. 如何在 Step 2 停止並刪除 docker compose 服務時同時刪除映像檔?

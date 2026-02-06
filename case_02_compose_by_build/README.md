@@ -6,10 +6,11 @@
 
 ## 專案目錄
 - case_02_compose_by_build
-  - app.py
+  - container
+    - app.py
+    - dockerfile
+    - requirements.txt
   - compose.yaml
-  - dockerfile
-  - requirements.txt
 
 ## 操作步驟
 Step 1. 在**背景**建立並啟動 dockedr compose 服務
@@ -47,4 +48,4 @@ docker compose down --rmi all
 2. 映像檔是否已刪除?
 
 ## 延伸問題
-1. 如何在容器服務為執行中時修改 app.py 並重新建立映像檔與啟動容器?
+1. 如何在容器服務執行中時修改 app.py 並重新建立映像檔與啟動容器?

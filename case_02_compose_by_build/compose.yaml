@@ -3,7 +3,7 @@ services:
   # 容器應用程式(網頁服務)  
   python-web:
     # 從 Dockerfile 產生映像檔並指定路徑
-    build: .
+    build: ./container
     # 指定容器名稱
     container_name: web-echo
     # 對應通訊埠
